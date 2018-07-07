@@ -13,6 +13,13 @@
             <li v-for="item in list">{{ item }}</li>
         </ol>
         <button v-on:click="handleClick">Click</button>
+        <p>{{ count }}</p>
+        <input v-model.number="count">
+        <p v-if="show">ShowがTrueなら表示</p>
+        <button v-on:click="show=!show">切り替え</button>
+        <transition>
+            <p v-if="show">halo</p>
+        </transition>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13"></script>
     <script src="main.js"></script>
