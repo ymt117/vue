@@ -8,6 +8,10 @@
 <body>
     <div id="app">
         <h1>{{ message }}</h1>
+        <ol>
+            <li v-for="item in list">{{ item }}</li>
+        </ol>
+        <button v-on:click="handleClick">Click</button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13"></script>
     <script src="main.js"></script>
