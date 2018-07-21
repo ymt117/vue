@@ -28,6 +28,9 @@ var app = new Vue({
         },
         doRemove: function(index){
             this.monster.splice(index, 1)
+        },
+        doAttack: function(index){
+            this.monster[index].hp -= 10
         }
     }
 })
