@@ -10,7 +10,8 @@ var app = new Vue({
             {id: 1, name: 'スライム', hp: 100},
             {id: 2, name: 'ゴブリン', hp: 200},
             {id: 3, name: 'ドラゴン', hp: 500}
-        ]
+        ],
+        mlist: []
     },
     methods: {
         handleClick: function(event){
@@ -32,5 +33,12 @@ var app = new Vue({
         doAttack: function(index){
             this.monster[index].hp -= 10
         }
+    },
+    created: function(){
+        axios.get('list.json').then(function(response){
+            this.mlist = response.data
+        }.bind(this)).catch(function(e){
+            console.error(e)
+        })
     }
 })
