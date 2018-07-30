@@ -34,6 +34,9 @@ var app = new Vue({
             this.monster[index].hp -= 10
         }
     },
+    mounted: function(){
+        console.log(this.$refs.hello)
+    },
     created: function(){
         axios.get('https://raw.githubusercontent.com/ymt117/vue/master/list.json').then(function(response){
             this.mlist = response.data
