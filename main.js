@@ -35,7 +35,7 @@ var app = new Vue({
         }
     },
     created: function(){
-        axios.get('list.json').then(function(response){
+        axios.get('https://raw.githubusercontent.com/ymt117/vue/master/list.json').then(function(response){
             this.mlist = response.data
         }.bind(this)).catch(function(e){
             console.error(e)
